@@ -1,0 +1,13 @@
+<div class="container">
+  
+<h1>Do you want to delete the User<br>'<%= @user.name %>'?</h1><br>
+<h3><%= @user.name %></h3>
+<p><%= @user.city %></p>
+
+<form action="/users/<%= @user.id %>/delete" method="post" id="delete_user">
+    <input type="hidden" name="_method" value="delete">
+    <span><input type="submit" class="bttn" value="Delete">
+    <input class="bttn" type="button" onclick="window.location.replace('/')" value="Cancel" />
+    </span>
+  </form>
+</div>

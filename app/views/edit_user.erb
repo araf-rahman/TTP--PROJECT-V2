@@ -1,0 +1,16 @@
+<div class="container">
+
+<h1>Updating infomation<br>"<%= @user.name %>"</h1><br>
+<h3><%= @user.name %></h3>
+<p><%= @user.city %></p>
+<hr></hr>
+<h4>Update Your Name or City </h4>
+  <form action="/users/<%= @user.id %>" method="post" id="edit_user">
+    <input type="hidden" name="_method" value="put">
+    Name: <input name="name" type="text" placeholder="Name" required><br>
+    Favorite City: <input name="city" placeholder="city" required><br>
+    <input type="submit" value="Save Changes">
+  </form>
+  <hr></hr>
+  <a href="/">Home Page</a>
+</div>

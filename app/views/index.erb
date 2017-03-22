@@ -1,0 +1,31 @@
+<div class="container">
+  <br>
+  <h1>Spotify Fellowship Challenge</h1>
+<center>
+  <br>
+  <% if @error_message %>
+    <%= @error_message %>
+    <br>
+  <% end %>
+  <br>
+<!-- Create User -->
+  <h3>Enter Your Name and City</h3>
+  <div class="container_sml">
+    <%= erb :_create_js_user %>
+    <br>
+  </div>
+</center>
+<!-- User and Favorite City -->
+  <% if @users %>
+    <div class="users">
+      <% @users.each do |user| %>
+      <span><h4><%= user.name %></h4>
+      <p>"<%= user.city %>"<p>
+        <a href="/users/<%= user.id %>/edit"><button type="button" class="bttn">Update</button></a>
+        <a href="/users/<%= user.id %>/delete"><button type="button" class="bttn">Delete</button></a>
+      </span>
+      <br><hr>
+    <% end %>
+    </div>
+  <% end %>
+</div>
